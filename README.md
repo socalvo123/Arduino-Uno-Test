@@ -1,5 +1,4 @@
-
-// Enzo/Paulo, Os Mais Mais  
+// Mu, O Mais Mais  
 
 #include <Servo.h>
 
@@ -21,7 +20,7 @@ void loop() {
 
   if (digitalRead(pinoBotao) == LOW) {
 
-    if (!portaAberta) {
+   if (!portaAberta) {
       // Abre a porta lentamente
       for (posicao = 0; posicao <= 90; posicao++) {
         servo.write(posicao);
@@ -29,7 +28,7 @@ void loop() {
       }
       portaAberta = true;
 
-    } else {
+  } else {
       // Fecha a porta lentamente
       for (posicao = 90; posicao >= 0; posicao--) {
         servo.write(posicao);
@@ -38,7 +37,7 @@ void loop() {
       portaAberta = false;
     }
 
-    // Espera soltar o botão
+   // Espera soltar o botão
     while (digitalRead(pinoBotao) == LOW);
     delay(20); // Evita múltiplos acionamentos
   }
